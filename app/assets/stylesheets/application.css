@@ -52,6 +52,7 @@ main {
   width: 200px;
   height: 250px;
   margin: 10px;
+  position: relative;
 }
 
 .list-comment {
