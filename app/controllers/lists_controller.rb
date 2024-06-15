@@ -34,8 +34,18 @@ class ListsController < ApplicationController
     list = List.find(params[:id])
     list.destroy
     redirect_to '/lists'
-  
   end
+  
+  def create
+    @list = List.new(list_params)
+    if @list.save
+      flash[:notice] = "投稿に成功しました。"
+      redirect_to list_path(@list.id)
+    else
+      render :new
+    end
+  end
+  
   
   private
   def list_params
